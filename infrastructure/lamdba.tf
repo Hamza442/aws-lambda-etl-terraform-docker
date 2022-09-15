@@ -1,5 +1,5 @@
 resource "aws_lambda_function" "etl_pipelinne" {
-  image_uri     = "137300309230.dkr.ecr.us-east-1.amazonaws.com/aws-lambda-etl:latest"
+  image_uri     = var.docker_image
   package_type  = "Image" 
   function_name = "etl_pipelinne"
   handler       = "app.lambda_ingest"

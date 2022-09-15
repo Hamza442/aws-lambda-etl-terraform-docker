@@ -14,7 +14,7 @@ variable "package_name" {
     type = string
     default = "aws-lambda-etl.zip"
 }
-variable "package_path" {
+variable "docker_image" {
     type = string
-    default = "aws-lambda-etl.zip"
+    default = "137300309230.dkr.ecr.us-east-1.amazonaws.com/aws-lambda-etl:latest"
 }
