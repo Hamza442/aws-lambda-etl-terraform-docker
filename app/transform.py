@@ -4,6 +4,7 @@ import pandas as pd
 
 def transform_to_parquet(file_name, bucket_name, tgt_folder):
     print(f'Creating JSON Reader for {file_name}')
+    # this will return a dataframe reader object when chunks are loaded
     df_reader = pd.read_json(
         f's3://{bucket_name}/landing/ghactivity/{file_name}',
         lines=True,
@@ -15,6 +16,8 @@ def transform_to_parquet(file_name, bucket_name, tgt_folder):
     dayofmonth = file_name.split('-')[2]
     hour = file_name.split('-')[3].split('.')[0]
     print(f'Transforming JSON to Parquet for {file_name}')
+    # uuid generate unique name every time it gets executed
+    # For each chunk it will create file on s3 bucket
     for idx, df in enumerate(df_reader):
         target_file_name = f'part-{year}-{month}-{dayofmonth}-{hour}-{uuid.uuid1()}.snappy.parquet'
         print(f'Processing chunk {idx} of size {df.shape[0]} from {file_name}')

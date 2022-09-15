@@ -1,3 +1,4 @@
+# lambda function to writ json file extracted from api
 resource "aws_lambda_function" "etl_pipelinne" {
   image_uri     = var.docker_image
   package_type  = "Image" 
