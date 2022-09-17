@@ -22,4 +22,7 @@ docker push 137300309230.dkr.ecr.us-east-1.amazonaws.com/aws-lambda-etl:latest
 # when new image is pushed its tagged with latest and old image becomes un-tagged
 # we want to make sure when new image is pushed lamdba function use that image
 # image with latest tag will have latest changes
-aws lambda update-function-code --function-name etl_pipelinne --image-uri 137300309230.dkr.ecr.us-east-1.amazonaws.com/aws-lambda-etl:latest
+
+aws lambda update-function-code --function-name etl_pipelinne_ingestor --image-uri 137300309230.dkr.ecr.us-east-1.amazonaws.com/aws-lambda-etl:latest
+
+aws lambda update-function-code --function-name etl_pipelinne_transformer --image-uri 137300309230.dkr.ecr.us-east-1.amazonaws.com/aws-lambda-etl:latest

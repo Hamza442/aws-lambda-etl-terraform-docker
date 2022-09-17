@@ -6,9 +6,13 @@ variable "bucket_name_deployemennt" {
     type = string
     default = "etl-package-deployement"
 }
-variable "folder_name" {
+variable "folder_name_raw" {
     type = string
-    default = "landing"
+    default = "landing/"
+}
+variable "folder_name_transformed" {
+    type = string
+    default = "transformed/"
 }
 variable "package_name" {
     type = string

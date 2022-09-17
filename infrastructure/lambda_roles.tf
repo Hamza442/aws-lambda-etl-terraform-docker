@@ -46,6 +46,7 @@ resource "aws_iam_role_policy" "lamdba_etl_s3_policy" {
 EOF
 
 }
+
 resource "aws_iam_role_policy" "lambda_etl_dynamodb_policy" {
   name = "lambda_etl_dynamodb_policy"
   role = aws_iam_role.lambda_etl_role.id
