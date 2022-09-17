@@ -3,8 +3,10 @@ resource "aws_lambda_function" "etl_pipelinne_ingestor" {
   image_uri     = var.docker_image
   package_type  = "Image" 
   function_name = "etl_pipelinne_ingestor"
-  handler       = "app.lambda_ingestor"
-  runtime       = "python3.9"
+  # handler,runtime defined in docker image
+  # These can be commented, otherwise they wil update lambda function
+  #handler       = "app.lambda_ingestor"
+  #runtime       = "python3.9"
   memory_size   = 1024
   timeout       = 10
   role          = aws_iam_role.lambda_etl_role.arn
@@ -24,8 +26,10 @@ resource "aws_lambda_function" "etl_pipelinne_transformer" {
   image_uri     = var.docker_image
   package_type  = "Image" 
   function_name = "etl_pipelinne_transformer"
-  handler       = "app.lambda_transform"
-  runtime       = "python3.9"
+  # handler,runtime defined in docker image
+  # These can be commented, otherwise they wil update lambda function
+  #handler       = "app.lambda_transform"
+  #runtime       = "python3.9"
   memory_size   = 1024
   timeout       = 180
   role          = aws_iam_role.lambda_etl_role.arn
