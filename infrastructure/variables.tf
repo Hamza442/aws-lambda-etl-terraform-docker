@@ -20,5 +20,5 @@ variable "package_name" {
 }
 variable "docker_image" {
     type = string
-    default = "137300309230.dkr.ecr.us-east-1.amazonaws.com/aws-lambda-etl:latest"
+    default = "111087180641.dkr.ecr.us-east-1.amazonaws.com/aws-lambda-etl:latest"
 }
